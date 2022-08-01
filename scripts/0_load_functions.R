@@ -1,0 +1,15 @@
+#  load packages 
+source("../scripts/0_functions/0func_0_import_data.R")
+source("../scripts/0_functions/0func_2_0set_vars.R")
+source("../scripts/0_functions/0func_2_1create_seurat_obj.R")
+source("../scripts/0_functions/0func_2_2median_3sd_QC.R")
+source("../scripts/0_functions/0func_2_3lmfit_3sd_QC.R")
+source("../scripts/0_functions/0func_3_1seurat_pipeline.R")
+source("../scripts/0_functions/0func_3_2print_plots.R")
+source("../scripts/0_functions/0func_3_3find_cluster.R")
+source("../scripts/0_functions/0func_3_4delete_cluster.R")
+source("../scripts/0_functions/0func_3_5subcluster_sd.R")
+source("../scripts/0_functions/0func_4_1integrate_pipeline.R")
+source("../scripts/0_functions/0func_5_1gene_plots.R")
+source("../scripts/0_functions/0func_5_2cell.annotation.R")
+# end

@@ -1,0 +1,2 @@
+GEO dataset: GSE202297
+paper: A shared disease-associated oligodendrocyte signature among multiple CNS pathologies
