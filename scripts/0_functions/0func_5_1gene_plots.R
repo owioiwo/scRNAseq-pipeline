@@ -32,7 +32,12 @@ gene.plots = function(seurat.object,default.genes){
         break
         }
     }
-    plot.feature = input.plot.genes(plot.choose,default.genes)
+    if(plot.choose == 6){
+      cat("gene expression plot complete..\n")
+      break
+    } else {
+      plot.feature = input.plot.genes(plot.choose,default.genes)
+      }
     if(plot.choose == 1){
       print(DotPlot(seurat.object,features = plot.feature) + RotatedAxis())
     } else if(plot.choose == 2){
@@ -41,11 +46,8 @@ gene.plots = function(seurat.object,default.genes){
       print(VlnPlot(seurat.object,features = plot.feature))
     } else if(plot.choose == 4){
       print(DoHeatmap(seurat.object,features = plot.feature) + NoLegend())
-    } else if(plot.choose == 5){
-      print(RidgePlot(seurat.object,features = plot.feature))
     } else {
-      cat("gene expression plot complete..\n")
-      break
+      print(RidgePlot(seurat.object,features = plot.feature))
     }
     cat("plot drwan.\n")
   }
