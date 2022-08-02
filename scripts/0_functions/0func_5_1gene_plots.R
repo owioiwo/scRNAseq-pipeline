@@ -14,7 +14,9 @@ input.plot.genes = function(plot.choose,default.genes){
            sample(1:length(default.genes),min(1,length(default.genes)))
     ) %>% sort()
     plot.feature = default.genes[plot.feature]
-  }
+  } else {
+    plot.feature = unique(plot.feature)
+    }
   return(plot.feature)
 }
 ## alt end
@@ -30,20 +32,16 @@ gene.plots = function(seurat.object,default.genes){
         break
         }
     }
+    plot.feature = input.plot.genes(plot.choose,default.genes)
     if(plot.choose == 1){
-      plot.feature = input.plot.genes(plot.choose,default.genes)
       print(DotPlot(seurat.object,features = plot.feature) + RotatedAxis())
     } else if(plot.choose == 2){
-      plot.feature = input.plot.genes(plot.choose,default.genes)
       print(FeaturePlot(seurat.object,features = plot.feature))
     } else if(plot.choose == 3){
-      plot.feature = input.plot.genes(plot.choose,default.genes)
       print(VlnPlot(seurat.object,features = plot.feature))
     } else if(plot.choose == 4){
-      plot.feature = input.plot.genes(plot.choose,default.genes)
       print(DoHeatmap(seurat.object,features = plot.feature) + NoLegend())
     } else if(plot.choose == 5){
-      plot.feature = input.plot.genes(plot.choose,default.genes)
       print(RidgePlot(seurat.object,features = plot.feature))
     } else {
       cat("gene expression plot complete..\n")
