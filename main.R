@@ -1,4 +1,6 @@
+## important: make sure that set the "results" directory as the working directory
 setwd("~/scRNAseq-pipeline/results/")
+## important end
 source("../scripts/0_load_functions.R")
 library(Seurat)
 library(ggplot2)
